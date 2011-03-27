@@ -1,1 +1,5 @@
 %h1 Simple Feature Switching
+-if FeatureSwitch.enabled? "feature_a"
+  %h2 "feature_a" is enabled.  Disable it by executing FeatureSwitch.disable "feature_a" in the console, then click refresh.
+-else
+  %h2 "feature_a" is disabled.  Enable it by executing FeatureSwitch.enable "feature_a" in the console, then click refresh.
