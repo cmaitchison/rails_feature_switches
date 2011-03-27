@@ -20,7 +20,7 @@ This is a very simple implementation of feature switching in Rails.  I am sure t
 Now navigate to localhost:3000 and see that there is a page stating that "feature_a" is disabled.
 
 * bundle exec rails console
-* >> FeatureSwitch.enable "feature_a"
+* (in Rails console) FeatureSwitch.enable "feature_a"
 
 Now refresh the page at localhost:3000 and see that the feature is now enabled.
 
@@ -34,11 +34,11 @@ In my opinion, the simplest solution is to add an ActiveRecord class to maintain
 
 ## Syntax
 
-if FeatureSwitch.enabled? "feature_a"
-  # show the UI element that is the hook into feature_a
-else
-  # don't
-end
+    if FeatureSwitch.enabled? "feature_a"
+      # show the UI element that is the hook into feature_a
+    else
+      # don't
+    end
 
 "feature_a" does not need to be declared in any config file.  It will be added to the db at the point where it is first referenced in the code.
 
@@ -46,13 +46,12 @@ In this very simple implementation, manipulation of the FeatureSwitches is easie
 
 The syntax to toggle features is:
 
-FeatureSwitch.enable "feature_a"
-FeatureSwitch.disable "feature_a"
+    FeatureSwitch.enable "feature_a"
+    FeatureSwitch.disable "feature_a"
 
 If feature_a does not exist when these commands are executed, it will be created.
 
-## Don't forget to remove Feature Switches for features which have become stable.
-
+## Don't forget to remove Feature Switches for features which have become stable!
 
 ## How to pimp this simple code:
 
